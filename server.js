@@ -37,7 +37,7 @@ hbs.registerHelper('screamIt', (text) => {
 
 app.get('/', (request, response) => {
     response.render('index.hbs', {
-        pageTitle: 'About Page',
+        pageTitle: 'Home Page',
         welcomeText: 'Welcome!',       
     });
 });
@@ -52,6 +52,12 @@ app.get('/bad', (request, response) => {
     response.send({
         errorCode: 101,
         errorMessage: "An error ocurred."
+    });
+});
+
+app.get('/projects', (request, response) => {
+    response.render('projects.hbs', {
+        pageTitle: 'Portfolio',
     });
 });
 
